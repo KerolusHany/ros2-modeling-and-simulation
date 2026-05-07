@@ -15,6 +15,12 @@ This project implements a complete mobile robot system with the following capabi
 
 ---
 
+## 🎥 Demo Video
+
+[![Mobile Robot Demo](https://img.youtube.com/vi/fOciioPhBq4/0.jpg)](https://youtu.be/fOciioPhBq4)
+
+---
+
 ## 📦 Project Structure
 
 ### Package: `mobile_robot_description`
