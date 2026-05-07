@@ -1,0 +1,64 @@
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="mobile_robot">
+
+  <!-- Base link -->
+  <link name="base_link">
+    <visual>
+      <geometry><box size="1 0.8 0.2"/></geometry>
+      <material name="black">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <!-- Caster wheel -->
+  <link name="caster_wheel_link">
+    <visual>
+      <geometry><cylinder radius="0.05" length="0.02"/></geometry>
+      <material name="red">
+        <color rgba="1 0 0 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <!-- Connect caster to base -->
+  <joint name="caster_wheel_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="caster_wheel_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Left wheel -->
+  <link name="continuous_link">
+    <visual>
+      <geometry><cylinder radius="0.1" length="0.05"/></geometry>
+      <material name="blue">
+        <color rgba="0 0 1 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="left_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="continuous_link"/>
+    <origin xyz="0 0.39 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <!-- Right wheel -->
+  <link name="continuous2_link">
+    <visual>
+      <geometry><cylinder radius="0.1" length="0.05"/></geometry>
+      <material name="blue">
+        <color rgba="0 0 1 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="right_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="continuous2_link"/>
+    <origin xyz="0 -0.39 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+</robot>
